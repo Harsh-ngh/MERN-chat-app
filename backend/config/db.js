@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const colors = require("colors");
 
-dotenv.config(); // Load environment variables from .env file
+dotenv.config(); 
 
 const connectDB = async () => {
   const MONGO_URI = process.env.MONGO_URI;
@@ -18,7 +18,7 @@ const connectDB = async () => {
       useUnifiedTopology: true,
     });
 
-    console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline);
+    console.log(`MongoDB Connected: ${conn.connection.host}`.green.underline);
   } catch (error) {
     console.error(`Error: ${error.message}`.red.bold);
     process.exit(1); // Exit with a non-zero status code to indicate an error
